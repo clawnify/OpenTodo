@@ -7,7 +7,7 @@ import type {
 import type { AppContextValue } from "../context";
 
 export function useAppState(isAgent: boolean): AppContextValue {
-  const [view, setView] = useState<View>("issues");
+  const [view, setView] = useState<View>(() => new URLSearchParams(window.location.search).get("view") === "projects" ? "projects" : "issues");
   const [stats, setStats] = useState<Stats>({ issues: 0, projects: 0, labels: 0 });
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
