@@ -1,4 +1,4 @@
-import { AppNav, embedded, reportLocation } from "@clawnify/app/client";
+import { AppNav, reportLocation } from "@clawnify/app/client";
 import { CircleCheck, ListTodo, FolderKanban } from "lucide-preact";
 import { useApp } from "../context";
 import type { View } from "../types";
@@ -25,13 +25,14 @@ export function Sidebar() {
     reportLocation(url.pathname + url.search);
   };
 
-  if (embedded) return <AppNav title="Todo" icon="list-checks" active={view}
+  // One <AppNav>: inside Clawnify the dashboard draws this navigation, and
+  // anywhere else the sidebar below is drawn from it.
+  return <AppNav title="Todo" icon="list-checks" active={view}
     groups={[{ items: NAV_ITEMS.map(item => ({ id: item.view, label: item.label,
       href: `/?view=${item.view}`, icon: item.view === "issues" ? "list-checks" : "folder",
       count: counts[item.view], home: item.view === "issues" })) }]}
-    onNavigate={item => handleNav(item.id as View)} />;
-
-  return (
+    onNavigate={item => handleNav(item.id as View)}
+    standalone={({ card }) => (
     <aside class="sidebar">
       <div class="sidebar-brand">
         <div class="sidebar-brand-icon">
@@ -54,6 +55,7 @@ export function Sidebar() {
           </button>
         ))}
       </nav>
+      {card && <div style={{ padding: "0 8px 8px" }}>{card}</div>}
     </aside>
-  );
+    )} />;
 }
