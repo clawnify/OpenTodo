@@ -5,9 +5,10 @@
 [![Deploy with Clawnify](https://app.clawnify.com/deploy-button.svg)](https://app.clawnify.com/deploy?repo=clawnify/OpenTodo)
 [![GitHub stars](https://img.shields.io/github/stars/clawnify/OpenTodo?style=social)](https://github.com/clawnify/OpenTodo/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![OpenClaw Ecosystem](https://img.shields.io/badge/Ecosystem-OpenClaw-blue)](https://github.com/openclaw/openclaw)
 
-A Linear-inspired issue tracker for building project management tools, bug trackers, and task management SaaS apps. Part of the [OpenClaw](https://github.com/openclaw/openclaw) ecosystem. Zero cloud dependencies — runs locally with SQLite.
+A Linear-inspired issue tracker for building project management tools, bug trackers, and task management SaaS apps. Zero cloud dependencies — runs locally with SQLite.
+
+The app is open source. Deploy it to Clawnify to use it from ChatGPT, Claude, or other MCP-compatible AI chats through the Clawnify connector.
 
 Built with **Preact + Hono + SQLite**. Ships with a dual-mode UI: one for humans (click-to-edit, inline forms) and one for AI agents (explicit buttons, large targets).
 
@@ -15,7 +16,7 @@ Built with **Preact + Hono + SQLite**. Ships with a dual-mode UI: one for humans
 
 ## What Is It?
 
-Clawnify OpenTodo is a production-ready issue tracker framework designed for the OpenClaw community. Think of it as an open-source Linear alternative — a project management UI you can self-host, customize, and embed in any SaaS product.
+Clawnify OpenTodo is a production-ready issue tracker framework. Think of it as an open-source Linear alternative — a project management UI you can self-host, customize, and embed in any SaaS product.
 
 Unlike Linear or Jira, this runs entirely on your own infrastructure with no API keys, no vendor lock-in, and no per-seat pricing. Track issues with status workflows, organize into projects, tag with colored labels, and comment for collaboration — all out of the box. It is the perfect foundation for building internal tools, headless project dashboards, or task-heavy admin panels.
 
@@ -45,7 +46,7 @@ pnpm run dev
 
 Open `http://localhost:5174` in your browser. Data persists in `data.db`.
 
-### Agent Mode (for OpenClaw / Browser-Use)
+### Agent Mode (for browser automation)
 
 Append `?agent` to the URL:
 
@@ -140,7 +141,7 @@ _meta        (key, value)          — identifier counter + prefix
 
 ## Community & Contributions
 
-This project is part of the [OpenClaw](https://github.com/openclaw/openclaw) ecosystem. Contributions are welcome — open an issue or submit a PR.
+Contributions are welcome — open an issue or submit a PR.
 
 ## License
 
